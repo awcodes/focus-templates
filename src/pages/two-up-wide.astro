@@ -1,0 +1,26 @@
+---
+import LogoVertical from '../components/LogoVertical.astro';
+import Card from '../layouts/Card.astro';
+---
+
+<Card title="Two Up Wide" width={2400} height={1260}>
+    <div data-focus="title" class="absolute top-17.5 left-17.5 text-9xl leading-none font-bold tracking-wide text-shadow">
+        Project Title
+    </div>
+
+    <div data-focus="description" class="absolute top-62.5 left-17.5 -mt-6 max-w-4xl text-5xl leading-[1.3] text-shadow">
+        Description: Proident veniam nostrud culpa culpa ex ex deserunt in veniam duis consectetur cillum.
+    </div>
+
+    <div class="screenshot absolute bottom-17.5 left-17.5 aspect-1400/816 w-[52%] overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
+        <img data-focus="screenshot.2" alt="" src="/samples/secondary.png" width="1400" height="816" class="h-full w-auto object-cover" />
+    </div>
+
+    <div class="screenshot absolute right-17.5 bottom-75 aspect-1400/816 w-[52%] overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
+        <img data-focus="screenshot.1" alt="" src="/samples/primary.png" width="1400" height="816" class="h-full w-auto object-cover" />
+    </div>
+
+    <div class="absolute right-17.5 bottom-17.5 h-32 w-auto">
+        <LogoVertical class="h-full w-auto" />
+    </div>
+</Card>

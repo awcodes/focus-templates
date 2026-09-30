@@ -1,0 +1,4 @@
+node_modules/
+.astro/
+.DS_Store
+# dist/ is committed on purpose: Focus reads the built templates from this repository.

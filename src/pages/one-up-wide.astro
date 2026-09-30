@@ -1,0 +1,24 @@
+---
+import LogoVertical from '../components/LogoVertical.astro';
+import Card from '../layouts/Card.astro';
+---
+
+<Card title="One Up Wide" width={2400} height={1260}>
+    <div data-focus="title" class="absolute inset-x-17.5 top-17.5 z-10 text-center text-9xl leading-none font-bold text-shadow">
+        Project Title
+    </div>
+
+    <div data-focus="description" class="absolute inset-x-17.5 top-62.5 z-10 -mt-6 text-center text-5xl leading-[1.3] text-shadow">
+        Description: Proident veniam nostrud culpa culpa ex ex deserunt in veniam duis consectetur cillum.
+    </div>
+
+    <div class="absolute inset-x-0 bottom-40 flex justify-center">
+        <div class="relative aspect-1400/816 w-[50%] overflow-hidden rounded-3xl shadow-2xl">
+            <img data-focus="screenshot.1" alt="" src="/samples/primary.png" width="1400" height="816" class="h-full w-auto object-cover" />
+        </div>
+    </div>
+
+    <div class="absolute right-17.5 bottom-17.5 h-32 w-auto">
+        <LogoVertical class="h-full w-auto" />
+    </div>
+</Card>
