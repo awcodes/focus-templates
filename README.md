@@ -50,6 +50,7 @@ Focus fills elements that have a `data-focus` attribute:
 | Key | Filled with |
 |---|---|
 | `title`, `description`, `package` | Text from the package's `composer.json`, or the card's `title()` and `description()` |
+| `install` | `composer require {package}`; override it per card, e.g. `->with(['install' => 'composer require --dev awcodes/focus'])` |
 | `screenshot.1`, `screenshot.2` | The card's screenshots, on `<img>` elements |
 
 Everything inside those elements is sample content, so `npm run dev` shows a realistic preview at `/default/`, `/two-up-wide/`, and so on.
