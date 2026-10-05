@@ -1,0 +1,34 @@
+<!DOCTYPE html><!-- The two-up-plain composition for packages without a UI: a light editor at the back, a dark terminal in front. --><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><!-- Focus lays the page out at this size and scales it to each card size. --><meta name="focus:canvas" content="2560x1440"><title>Code Plain | aw.codes</title><link rel="stylesheet" href="/_astro/Card.BVJd-4Qw.css"></head><body class="m-0 bg-gray-950 font-sans text-white antialiased"><div class="relative overflow-hidden" style="width:2560px;height:1440px"><div class="absolute inset-0 bg-linear-135 via-gray-950 to-gray-950 from-cyan-800"></div><div class="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.06)_0_3px,transparent_3px_36px)]"></div><div class="absolute top-30 right-30 w-475 overflow-hidden rounded-3xl border border-gray-900/20 bg-white shadow-2xl" style="height: 1108px;"><div class="flex h-20 items-center gap-5 border-b border-gray-200 bg-gray-100 px-8"><span class="size-6 rounded-full bg-gray-300"></span><span class="size-6 rounded-full bg-gray-300"></span><span class="size-6 rounded-full bg-gray-300"></span></div><pre data-focus="code" class="code m-0 px-16 py-14 font-mono text-[2.75rem] leading-[1.6] whitespace-pre text-gray-800">use Awcodes\Example\Example;
+
+$result = Example::make()
+    ->option('value')
+    ->render();</pre></div><div class="absolute bottom-30 left-30 z-10 w-350 overflow-hidden rounded-3xl border border-white/10 bg-gray-950 shadow-2xl" style="height: 560px;"><div class="flex h-20 items-center gap-5 bg-gray-900 px-8"><span class="size-6 rounded-full bg-red-400"></span><span class="size-6 rounded-full bg-amber-400"></span><span class="size-6 rounded-full bg-green-400"></span></div><div class="px-14 py-12 font-mono text-[2.75rem] leading-[1.6] text-gray-200"><div><span class="text-cyan-400">$</span> <span data-focus="install">composer require awcodes/example</span></div><div class="text-gray-500">./composer.json has been updated</div><div class="text-gray-500">Package operations: 1 install</div><div class="text-green-400">Installed successfully.</div></div></div><script>
+        // Light PHP highlighting, applied whenever Focus fills the code value. Text only, so nothing is parsed as HTML.
+        const code = document.querySelector('.code');
+        const rules = [
+            [/(\/\/.*$)/gm, 'color:#64748b'],
+            [/('[^']*')/g, 'color:#0f766e'],
+            [/\b(use|new|return|public|function|array|fn|static)\b/g, 'color:#7c3aed'],
+            [/(\$[A-Za-z_]\w*)/g, 'color:#0369a1'],
+            [/(-&gt;|::)(\w+)/g, null],
+        ];
+        const escape = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        let highlighted = null;
+        const highlight = () => {
+            // Setting innerHTML fires the observer again; the text is unchanged then, so it stops there.
+            if (code.textContent === highlighted) return;
+            const tokens = [];
+            let html = escape(code.textContent);
+            for (const [pattern, style] of rules) {
+                html = html.replace(pattern, (match, a, b) => {
+                    const piece = style ? `<span style="${style}">${a}</span>` : `${a}<span style="color:#b45309">${b}</span>`;
+                    tokens.push(piece);
+                    return `\u0000${tokens.length - 1}\u0000`;
+                });
+            }
+            code.innerHTML = html.replace(/\u0000(\d+)\u0000/g, (_, i) => tokens[i]);
+            highlighted = code.textContent;
+        };
+        new MutationObserver(highlight).observe(code, { childList: true, characterData: true, subtree: true });
+        highlight();
+    </script></div></body></html>

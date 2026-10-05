@@ -1,0 +1,14 @@
+---
+import Card from '../layouts/Card.astro';
+---
+
+<!-- No title, description or logo: for sites that present the image under their own heading. -->
+<Card title="Two Up Plain Wide" width={2400} height={1260}>
+    <div class="screenshot absolute top-25 right-25 aspect-1400/816 w-450 overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
+        <img data-focus="screenshot.2.light" alt="" src="/samples/secondary.png" width="1400" height="816" class="h-full w-full object-cover object-top-left" />
+    </div>
+
+    <div class="screenshot absolute bottom-25 left-25 z-10 aspect-1400/816 w-325 overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+        <img data-focus="screenshot.1.dark" alt="" src="/samples/primary.png" width="1400" height="816" class="h-full w-full object-cover object-top-left" />
+    </div>
+</Card>
