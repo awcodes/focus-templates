@@ -1,0 +1,13 @@
+---
+import LogoVertical from '../components/LogoVertical.astro';
+import Card from '../layouts/Card.astro';
+---
+
+<!-- A fixed fallback image, for projects that have no card of their own (for example ones we contribute to). -->
+<Card title="Logo Plain" tone="neutral">
+    <div class="absolute inset-0 grid place-content-center">
+        <div class="h-150 w-auto">
+            <LogoVertical class="h-full w-auto" />
+        </div>
+    </div>
+</Card>

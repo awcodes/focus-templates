@@ -18,6 +18,8 @@ Each layout comes in two canvases. Focus lays a template out at its canvas and s
 | `two-up-wide` | 2400x1260 | 2 | Same, smaller screenshots | Open Graph, GitHub social |
 | `two-up-plain` | 2560x1440 | 2 | The two-up screenshots, larger, with no title, description or logo | 16:9, for sites that caption the image themselves |
 | `two-up-plain-wide` | 2400x1260 | 2 | Same | Open Graph ratio |
+| `code-plain` | 2560x1440 | 0 | A light editor showing the card's `code` value, and a dark terminal in front showing the install command; no title or logo. Keep the snippet to 7 lines. | 16:9, for packages without a UI |
+| `logo-plain` | 2560x1440 | 0 | The logo centred on a neutral grey version of the background | A fixed fallback image |
 
 The wide canvas is Open Graph's exact ratio. GitHub social (2:1) crops 30px from its top and bottom, inside the 70px margins every layout keeps, and Focus reports that crop as a warning.
 
@@ -53,6 +55,7 @@ Focus fills elements that have a `data-focus` attribute:
 |---|---|
 | `title`, `description`, `package` | Text from the package's `composer.json`, or the card's `title()` and `description()` |
 | `install` | `composer require {package}`; override it per card, e.g. `->with(['install' => 'composer require --dev awcodes/focus'])` |
+| `code` | `code-plain` only: the snippet, from `->with(['code' => $snippet])` |
 | `screenshot.1`, `screenshot.2` | The card's screenshots, on `<img>` elements |
 
 Everything inside those elements is sample content, so `npm run dev` shows a realistic preview at `/default/`, `/two-up-wide/`, and so on.
