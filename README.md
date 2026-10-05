@@ -16,6 +16,8 @@ Each layout comes in two canvases. Focus lays a template out at its canvas and s
 | `one-up-wide` | 2400x1260 | 1 | Same, smaller screenshot | Open Graph, GitHub social |
 | `two-up` | 2560x1440 | 2 | Title and description top left; the light screenshot large at the back, the dark one in front at the lower left | 16:9 |
 | `two-up-wide` | 2400x1260 | 2 | Same, smaller screenshots | Open Graph, GitHub social |
+| `two-up-plain` | 2560x1440 | 2 | The two-up screenshots, larger, with no title, description or logo | 16:9, for sites that caption the image themselves |
+| `two-up-plain-wide` | 2400x1260 | 2 | Same | Open Graph ratio |
 
 The wide canvas is Open Graph's exact ratio. GitHub social (2:1) crops 30px from its top and bottom, inside the 70px margins every layout keeps, and Focus reports that crop as a warning.
 
