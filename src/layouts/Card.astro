@@ -5,9 +5,10 @@ interface Props {
     title: string;
     width?: number;
     height?: number;
+    background?: 'photo' | 'stripes';
 }
 
-const { title, width = 2560, height = 1440 } = Astro.props;
+const { title, width = 2560, height = 1440, background = 'photo' } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,9 +23,13 @@ const { title, width = 2560, height = 1440 } = Astro.props;
     </head>
     <body class="m-0 bg-gray-950 font-sans text-white antialiased">
         <div class="relative overflow-hidden" style={{ width: `${width}px`, height: `${height}px` }}>
-            <div class="relative z-0">
+            {background === 'stripes' && <>
+                <div class="absolute inset-0 bg-linear-135 from-cyan-800 via-gray-950 to-gray-950"></div>
+                <div class="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.06)_0_3px,transparent_3px_36px)]"></div>
+            </>}
+            {background === 'photo' && <div class="relative z-0">
                 <img alt="" src="/background.jpg" width={width} height={height} class="object-cover object-center opacity-75" style={{ width: `${width}px`, height: `${height}px` }} />
-            </div>
+            </div>}
             <slot />
         </div>
     </body>
