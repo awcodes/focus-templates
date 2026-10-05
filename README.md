@@ -14,10 +14,8 @@ Each layout comes in two canvases. Focus lays a template out at its canvas and s
 | `default-wide` | 2400x1260 | 0 | Same | Open Graph, GitHub social |
 | `one-up` | 2560x1440 | 1 | Title and description above one screenshot | 16:9 |
 | `one-up-wide` | 2400x1260 | 1 | Same, smaller screenshot | Open Graph, GitHub social |
-| `two-up` | 2560x1440 | 2 | Title and description, two overlapping screenshots | 16:9 |
+| `two-up` | 2560x1440 | 2 | Title and description top left; the light screenshot large at the back, the dark one in front at the lower left | 16:9 |
 | `two-up-wide` | 2400x1260 | 2 | Same, smaller screenshots | Open Graph, GitHub social |
-| `showcase` | 2560x1440 | 2 | Title and description top left; the light screenshot large at the back, the dark one in front | 16:9 |
-| `showcase-wide` | 2400x1260 | 2 | Same | Open Graph, GitHub social |
 
 The wide canvas is Open Graph's exact ratio. GitHub social (2:1) crops 30px from its top and bottom, inside the 70px margins every layout keeps, and Focus reports that crop as a warning.
 
@@ -28,7 +26,7 @@ use Awcodes\Focus\Card;
 use Awcodes\Focus\Enums\Size;
 
 return ScreenshotSuite::make()
-    ->cardTemplates('https://github.com/awcodes/focus-templates/tree/v1.0.0/dist')
+    ->cardTemplates('https://github.com/awcodes/focus-templates/tree/v2.0.0/dist')
     ->screenshots([/* ... */])
     ->cards([
         Card::make('social')
