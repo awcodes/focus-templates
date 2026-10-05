@@ -4,24 +4,24 @@ import Card from '../layouts/Card.astro';
 ---
 
 <Card title="Two Up Wide" width={2400} height={1260}>
-    <div data-focus="title" class="absolute top-17.5 left-17.5 text-9xl leading-none font-bold tracking-wide text-shadow">
+    <div data-focus="title" class="absolute top-17.5 left-17.5 text-[10rem] leading-none font-bold text-shadow">
         Project Title
     </div>
 
-    <!-- The description ends 70px before the dark screenshot, which starts 48% of the canvas width minus the 70px margin. -->
-    <div data-focus="description" class="absolute top-62.5 left-17.5 -mt-6 max-w-[min(56rem,calc(48%-13.125rem))] text-5xl leading-[1.3] text-shadow">
+    <!-- The description ends 70px before the light screenshot, which starts 1360px from the right edge. -->
+    <div data-focus="description" class="absolute top-70 left-17.5 max-w-207.5 text-5xl leading-[1.3] text-shadow">
         Description: Proident veniam nostrud culpa culpa ex ex deserunt in veniam duis consectetur cillum.
     </div>
 
-    <div class="screenshot absolute bottom-17.5 left-17.5 aspect-1400/816 w-[52%] overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
+    <div class="screenshot absolute right-17.5 bottom-17.5 aspect-1400/816 w-340 overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
         <img data-focus="screenshot.2.light" alt="" src="/samples/secondary.png" width="1400" height="816" class="h-full w-full object-cover object-top-left" />
     </div>
 
-    <div class="screenshot absolute right-17.5 bottom-75 aspect-1400/816 w-[52%] overflow-hidden rounded-3xl border border-gray-900/20 shadow-2xl">
+    <div class="screenshot absolute bottom-17.5 left-17.5 z-10 aspect-1400/816 w-262.5 overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
         <img data-focus="screenshot.1.dark" alt="" src="/samples/primary.png" width="1400" height="816" class="h-full w-full object-cover object-top-left" />
     </div>
 
-    <div class="absolute right-17.5 bottom-17.5 h-32 w-auto">
+    <div class="absolute top-17.5 right-17.5 h-40 w-auto">
         <LogoVertical class="h-full w-auto" />
     </div>
 </Card>
